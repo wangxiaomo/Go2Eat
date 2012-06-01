@@ -8,7 +8,7 @@ use Data::Dump qw/dump/;
 
 our $VERSION = '0.1';
 
-get '/' => sub { template 'index'; };
-
+get '/'        => sub { template 'index'; };
+get '/about/?' => sub { template 'about'; };
 
 true;
