@@ -3,10 +3,10 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    NAME                => 'dancer_bootstrap_fontawesome_template',
-    AUTHOR              => q{YOUR NAME <youremail@example.com>},
-    VERSION_FROM        => 'lib/dancer_bootstrap_fontawesome_template.pm',
-    ABSTRACT            => 'YOUR APPLICATION ABSTRACT',
+    NAME                => 'Go2Eat',
+    AUTHOR              => q{xiaomo(wxm4ever@gmail.com)},
+    VERSION_FROM        => 'lib/Go2Eat.pm',
+    ABSTRACT            => 'APPLICATION ABSTRACT',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'perl')
       : ()),
@@ -17,5 +17,5 @@ WriteMakefile(
         'Dancer'     => 1.3095,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'dancer_bootstrap_fontawesome_template-*' },
+    clean               => { FILES => '*' },
 );
