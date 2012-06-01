@@ -43,6 +43,7 @@ body { padding-top:60px; padding-bottom:40px;}
   [% content %]
 
 <!-- Footer -->
+  <hr />
   <footer>
     <p>&copy;PerlChina. Dancer. </p>
   </footer>
