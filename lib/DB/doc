@@ -1,0 +1,22 @@
+DB NAME: go2eat
+NS1: users
+    1>users <=> {
+        "username":"xxx",
+        "userpass":"xxx",
+        "email":"xxx",
+        "sex":"xxx",
+        
+        "groups":[
+            {
+                "groupname":"xxx",
+            },
+        ],
+
+        "restaurants":[
+            {
+                "name":"xxx",
+                "score":"xxx",
+                "date":"xxx",
+            },
+        ],
+    }
