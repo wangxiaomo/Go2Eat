@@ -1,2 +1,10 @@
 update:2012/06/01
 Framework is Dancer-Bootstrap-Fontawesome-Template
+
+Website:
+    为了解决一拨人一起吃饭时候不知道该吃什么的问题.
+    假设A公司有7个员工中午一起吃饭,周围有5家饭馆,随机结果则在这5家之中产生.
+    随机结果不是公平权重的,而是根据5家饭馆的评分来设定权重的.
+    这些评分是员工每天积累的.
+
+Perl/Dancer/Mongodb
