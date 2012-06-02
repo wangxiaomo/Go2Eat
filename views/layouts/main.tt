@@ -32,7 +32,7 @@ body { padding-top:60px; padding-bottom:40px;}
           <li class="about"><a href="[% request.uri_base %]/about">About</a></li>
         </ul>
         <ul class="nav pull-right">
-          <li><a href="[% request.uri_base %]/login">Login</a></li>
+          <li><a class="login">Login</a></li>
         </ul>
       </div>
     </div>
@@ -49,9 +49,49 @@ body { padding-top:60px; padding-bottom:40px;}
   </footer>
 </div>
 
+<div class="modal hide login">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">x</button>
+    <h3>Login</h3>
+  </div>
+  <div class="modal-body">
+    <div class="span6">
+    <form method="post" action="[% request.uri_base %]/login" class="login from-horizontal">
+      <fieldset>
+        <div class="control-group">
+          <label class="control-label" for="username">username:</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge" id="username"><span class="help-inline">HelpInfo</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="userpass">password:</label>
+          <div class="controls">
+            <input type="password" class="input-xlarge" id="password"><span class="help-inline">HelpInfo</span>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary login-submit">Login</a>
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
+
 <script src="[% request.uri_base %]/javascripts/jquery-1.7.2.min.js" ></script>
 <script src="[% request.uri_base %]/bootstrap/js/bootstrap.min.js" ></script>
 <script type="text/javascript">
+$(document).ready(function(){
+    /* show login dialog */
+    $("a.login").click(function(){
+        $("div.login").modal('show');
+    });
+    $(".login-submit").click(function(){
+        $("form.login").submit();
+    });
+});
 </script>
 
 </body>
