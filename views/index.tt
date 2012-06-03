@@ -1,5 +1,18 @@
-Fork me on GitHub
 
+[% IF NOT session.is_login %]
+<span class="label label-important">not login</span>
+[% ELSE %]
+<span class="label label-success">login</span>
+[% END %]
+
+[% IF msg %]
+<div class="flash">[% msg %]</div>
+[% END %]
+
+<form method="post" action="[% request.uri_base %]/login">
+<input type="text" id="username" name="username"/>
+<input type="submit" value="submit" />
+</form>
 
 <script src="[% request.uri_base %]/javascripts/jquery-1.7.2.min.js"></script>
 <script src="[% request.uri_base %]/bootstrap/js/bootstrap.min.js"></script>
