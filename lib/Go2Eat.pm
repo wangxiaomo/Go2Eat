@@ -64,7 +64,9 @@ any  '/login/?' => sub {
 };
 get '/logout' => sub {
     session->destroy;
-    set_flash('logout');
+    cookie is_login => 0;
+    cookie username => '';
+    set_flash('logout success!');
     redirect '/';
 };
 
