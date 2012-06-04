@@ -17,3 +17,33 @@ Perl/Dancer/Mongodb
 BUG:
     1.FLASH
     2.在 template 中如何使用 cookie
+
+
+update:2012/06/04
+推荐算法是关键.现在先以最简单的方法来实现.之后根据效果来变化算法.
+总之数据的准备计算过程如下:
+    1>user.restaurants = [
+        {name:"rest1", score:2, time:"xxxx"},
+        {name:"rest2", score:3, time:"xxx"},
+        {name:"rest1", score:4, time:"xxxx"}
+      ]
+      首先就是要整理出
+      user:[
+        {name:"rest1", score:x},
+        {name:"rest2", score:x}
+      ]
+    2>user1:[
+        {name:"rest1", score:x},
+        {name:"rest2", score:x}
+      ]
+      user2:[
+        {name:"rest2", score:x},
+        {name:"rest5", score:x}
+      ]
+      根据以上数据得出
+      recommand:[
+          {name:"rest3", score:xxx},
+          {name:"rest2", score:xxx},
+      ];
+
+现在最简单的算法:平均分
