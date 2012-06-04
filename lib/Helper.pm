@@ -21,4 +21,13 @@ sub login_isvalid {
     return $user;
 }
 
+sub get_user_info {
+    my $username = shift;
+    my $conn  = GetMongo();
+    my $users = $conn->go2eat->users;
+    return $users->find_one({
+        username    =>  $username,
+    });
+} 
+
 1;

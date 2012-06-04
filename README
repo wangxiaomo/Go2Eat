@@ -12,3 +12,8 @@ Perl/Dancer/Mongodb
 初步定位2个功能：
     1.固定团体内的饭馆推荐。
     2.非固定团体内的饭馆推荐。因此后期可能会有关注关系。所以设置预留 follow 集合。
+
+
+BUG:
+    1.FLASH
+    2.在 template 中如何使用 cookie

@@ -1,0 +1,26 @@
+
+
+Debug Template
+
+[% IF msg %]
+<div class="flash modal hide" id="flash">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">x</button>
+    <h3>Flashing</h3>
+  </div>
+  <div class="modal-body">
+    <p>[% msg %]</p>
+  </div>
+  <div class="modal-footer">
+    <a class="btn btn-primary" data-dismiss="modal">OK</a>
+  </div>
+</div>
+
+<script src="[% request.uri_base %]/javascripts/jquery-1.7.2.min.js"></script>
+<script src="[% request.uri_base %]/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#flash").modal('show');
+});
+</script>
+[% END %]

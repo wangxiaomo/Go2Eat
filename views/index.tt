@@ -1,18 +1,43 @@
-
-[% IF NOT session.is_login %]
-<span class="label label-important">not login</span>
-[% ELSE %]
-<span class="label label-success">login</span>
-[% END %]
-
 [% IF msg %]
-<div class="flash">[% msg %]</div>
+  <div class="flash modal hide">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">x</button>
+      <h3>Flashing</h3>
+    </div>
+    <div class="modal-body">
+      <p>[% msg %]</p>
+    </div>
+    <div class="modal-footer">
+      <a class="btn btn-primary" data-dismiss="modal">OK</a>
+    </div>
+  </div>
+[% END %] 
+[% IF NOT session.is_login %]
+    <span class="label label-important">not login</span>
+[% ELSE %]
+    <div class="container">
+      <div class="row">
+        <div class="span4" style="backgroud-color:#BAD7E8">
+          <img src="[% request.uri_base %]/images/xiaomo.jpg" style="margin-left:20px"/>
+          <br />
+          <h3>昵称: [% user.username %]</h3>
+          <h3>圈子: </h3>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width:80%;"></div>
+          </div>
+          <div class="btn-group">
+          [% FOREACH group IN user.groups %]
+            <button class="btn">[% group %]</button>
+          [% END %]
+          </div>
+        </div>
+        <div class="span8" style="backgroud-color:#DCEBF5">
+          <div>去哪吃?</div>
+          <div>评价餐馆</div>
+        </div>
+      </div>
+    </div>
 [% END %]
-
-<form method="post" action="[% request.uri_base %]/login">
-<input type="text" id="username" name="username"/>
-<input type="submit" value="submit" />
-</form>
 
 <script src="[% request.uri_base %]/javascripts/jquery-1.7.2.min.js"></script>
 <script src="[% request.uri_base %]/bootstrap/js/bootstrap.min.js"></script>
@@ -20,5 +45,8 @@
 $(document).ready(function(){
     $(".about).removeClass("active");
     $(".home).addClass("active");
+    $(".flash").modal('show');
+    alert("initialization over!");
 });
 </script>
+
