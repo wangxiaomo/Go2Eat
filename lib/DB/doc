@@ -20,3 +20,5 @@ NS1: users
             },
         ],
     }
+
+    unique index : username
